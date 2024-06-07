@@ -2,7 +2,7 @@
 #!desc=去广告合集, 以下app请使用单独配置文件: 高德地图,哔哩哔哩,网易云音乐,微博,YouTube,知乎
 #!system=ios
 
-[URL REWRITE]
+[URL Rewrite]
 # 58同城 //*.58cdn.com.cn, app.58.com, pic?.ajkimg.com
 ^https:\/\/app\.58\.com\/api\/home\/(advertising|appadv) - reject
 ^https:\/\/app\.58\.com\/api\/home\/invite\/popupAdv - reject
@@ -46,7 +46,7 @@
 # 云闪付 //wallet.95516.com
 ^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
 
-[MAP LOCAL]
+[Map Local]
 # 阿里云盘 //api.alipan.com, member.alipan.com
 ^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders data-type=text data="{}" status-code=200
 ^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle data-type=text data="{}" status-code=200
@@ -96,7 +96,7 @@
 # 中国移动 //client.app.coc.10086.cn
 ^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) data-type=text data="{}" status-code=200
 
-[SCRIPT]
+[Script]
 # 12306 //ad.12306.cn, mobile.12306.cn
 12306 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/12306.js, requires-body=true, max-size=-1, timeout=60
 header = type=http-response, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, timeout=60
