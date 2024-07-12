@@ -1,0 +1,20 @@
+#!name=虎扑
+#!desc=虎扑净化
+#!system=ios
+
+[URL Rewrite]
+^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/reddot\/v1\/app\/getReddot -reject
+^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/(bbsallapi\/tag\/v1\/heatTag|bbsrankapi\/v1\/rating\/list) -reject
+^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/search\/v2\/(hintkeylist|hotkeylist) -reject
+^https:\/\/goblin\.hupu\.com\/\d\/\d\.\d\.\d+\/interfaceAd\/getOther\/v\d -reject
+^https:\/\/goblin\.hupu\.com\/\d\/\d\.\d\.\d+\/interfaceAd\/getOther\/batch -reject
+^https:\/\/fairy\.mobileapi\.hupu\.com\/gallery\/getmod2 -reject
+
+[Script]
+hupu = type=http-response, pattern=^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/HUPU/HUPU_remove_ads.js, requires-body=true, max-size=-1, timeout=60
+hupu = type=http-response, pattern=^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/HUPU/HUPU_remove_ads.js, requires-body=true, max-size=-1, timeout=60
+hupu = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/HUPU/HUPU_remove_ads.js, requires-body=true, max-size=-1, timeout=60
+hupu = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/HUPU/HUPU_remove_ads.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% games.mobileapi.hupu.com, fairy.mobileapi.hupu.com, bbs.mobileapi.hupu.com, goblin.hupu.com
