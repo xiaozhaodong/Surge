@@ -3,8 +3,8 @@
 #!system=ios
 
 [Script]
-pipixia = type=http-response, pattern=^https:\/\/.+\.pipix\.com\/bds\/feed\/channel_list\/ script-path=script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/PiPiXia/PiPiXia_remove_ads.js, requires-body=true, max-size=-1, timeout=60
-pipixia = type=http-response, pattern=^https:\/\/.+\.pipix\.com\/bds\/user\/check_in\/ script-path=script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/PiPiXia/PiPiXia_remove_ads.js, requires-body=true, max-size=-1, timeout=60
+pipixia = type=http-response, pattern=^https:\/\/.+\.pipix\.com\/bds\/feed\/channel_list\/,script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/PiPiXia/PiPiXia_remove_ads.js, requires-body=true, max-size=-1, timeout=60
+pipixia = type=http-response, pattern=^https:\/\/.+\.pipix\.com\/bds\/user\/check_in\/, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/PiPiXia/PiPiXia_remove_ads.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% *.pipix.com
