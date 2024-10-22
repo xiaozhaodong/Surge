@@ -49,7 +49,7 @@ if (url.includes("/amdc/mobileDispatch")) {
     }
   } else {
     if (list12306?.includes(headopt)) {
-      $done();
+      $done({});
     } else {
       $done({});
     }
