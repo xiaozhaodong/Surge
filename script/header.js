@@ -17,7 +17,7 @@ if (url.includes("/amdc/mobileDispatch")) {
     if (isQuanX) {
       $done({ status: "HTTP/1.1 404 Not Found" });
     } else {
-      $done();
+      $done({});
     }
   } else {
     $done({});
@@ -68,7 +68,7 @@ if (url.includes("/amdc/mobileDispatch")) {
     }
   } else {
     if (listbankabc?.includes(headopt)) {
-      $done();
+      $done({});
     } else {
       $done({});
     }
