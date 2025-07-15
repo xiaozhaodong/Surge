@@ -1,16 +1,15 @@
 #!name=屏蔽 Augmentcode 数据上报 (通用最终版)
 #!desc=拦截 augmentcode.com 所有子域名下的 client-metrics 和 report-error API。完美适应 d5.api 等前缀变化的情况。
 
+
+[Map Local]
+# 规则1: 匹配 augmentcode.com 任意子域名下的 client-metrics 请求
+^https?://.*\.augmentcode\.com/.*client-metrics.* data-type=text data="{}" status-code=200
+
+# 规则2: 匹配 augmentcode.com 任意子域名下的 report-error 请求
+^https?://.*\.augmentcode\.com/.*report-error.* data-type=text data="{}" status-code=200
+
+
 [MITM]
 # *.augmentcode.com 这个设置已经可以覆盖所有子域名，无需改动
 hostname = %APPEND% *.augmentcode.com
-
-https://ahrefs.com/writing-tools/paragraph-rewriter
-# 1. 使用了更通用的正则表达式，不再写死 "d5.api"
-# 2. 依然使用 header: 方式返回空响应，无需本地文件
-
-# 规则1: 匹配 augmentcode.com 任意子域名下的 client-metrics 请求
-^https?://.*\.augmentcode\.com/.*client-metrics.* header: "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\n\r\n{}"
-
-# 规则2: 匹配 augmentcode.com 任意子域名下的 report-error 请求
-^https?://.*\.augmentcode\.com/.*report-error.* header: "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\n\r\n{}"
