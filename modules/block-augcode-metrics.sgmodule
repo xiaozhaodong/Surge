@@ -1,0 +1,11 @@
+#!name=屏蔽 Augcode 数据上报
+#!desc=精确阻断 augcode.com 下的 client-metrics 和 report-error API 请求。需要开启 MITM。
+
+
+[Map Local]
+^https?://.*\.augcode\.com/.*client-metrics.* data-type=text data="{}" status-code=200
+^https?://.*\.augcode\.com/.*report-error.* data-type=text data="{}" status-code=200
+
+[MITM]
+# 开启对 augmentcode.com 的 HTTPS 解密，这是 URL-REGEX 规则生效的前提
+hostname = %APPEND% augmentcode.com
