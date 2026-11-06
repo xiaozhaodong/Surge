@@ -1,0 +1,183 @@
+# 自维护的海外服务排除项，仅供 tools/build_china_dns.py 使用。
+# 不要把本文件直接绑定国内 DNS；生成后的 ChinaDNS.list 才是实际引用文件。
+# 按明确服务身份/国际业务识别，不按一次 DNS 返回的 IP 地理位置分类。
+# 排除根域时同时排除其子域；已保留的父域覆盖排除项时构建会报错。
+
+# Microsoft / Office / Outlook / Xbox / Azure / Visual Studio
+# https://learn.microsoft.com/microsoft-365/enterprise/urls-and-ip-address-ranges
+DOMAIN-SUFFIX,microsoft.com
+DOMAIN-SUFFIX,microsoftonline.com
+DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,office.net
+DOMAIN-SUFFIX,office365.com
+DOMAIN-SUFFIX,hotmail.com
+DOMAIN-SUFFIX,outlook.com
+DOMAIN-SUFFIX,onenote.net
+DOMAIN-SUFFIX,sharepoint.com
+DOMAIN-SUFFIX,msauth.net
+DOMAIN-SUFFIX,msecnd.net
+DOMAIN-SUFFIX,msocdn.com
+DOMAIN-SUFFIX,s-microsoft.com
+DOMAIN-SUFFIX,windows.com
+DOMAIN-SUFFIX,windows.net
+DOMAIN-SUFFIX,windowsupdate.com
+DOMAIN-SUFFIX,visualstudio.com
+DOMAIN-SUFFIX,xbox.com
+DOMAIN-SUFFIX,xboxlive.com
+
+# Apple / Beats
+# https://support.apple.com/en-us/101555
+DOMAIN-SUFFIX,aaplimg.com
+DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-SUFFIX,me.com
+DOMAIN-SUFFIX,beatsbydre.com
+
+# Oracle / Java / Adobe / AMD / JetBrains / Ubiquiti / Strava / Bjango
+DOMAIN-SUFFIX,oracle.com
+DOMAIN-SUFFIX,java.com
+DOMAIN-SUFFIX,adobesc.com
+DOMAIN-SUFFIX,amd.com
+DOMAIN-SUFFIX,jetbrains.com
+DOMAIN-SUFFIX,amplifi.com
+DOMAIN-SUFFIX,strava.com
+DOMAIN-SUFFIX,bjango.com
+DOMAIN-SUFFIX,istatmenus.app
+
+# 全球 CDN、境外云及客服服务；含在中国提供节点的国际平台。
+# https://developers.cloudflare.com/china-network/
+DOMAIN-SUFFIX,akadns.net
+DOMAIN-SUFFIX,akamaihd.net
+# 上游存在的疑似 Akamai 域名拼写错误，一并不导入。
+DOMAIN,origin-a.akamaihd.ne
+DOMAIN-SUFFIX,cloudflare-cn.com
+DOMAIN-SUFFIX,cloudflarecn.net
+DOMAIN-SUFFIX,cloudflareinsights-cn.com
+DOMAIN-SUFFIX,cloudflareprod.com
+DOMAIN-SUFFIX,cloudflarestaging.com
+DOMAIN-SUFFIX,cloudflarestoragegw.com
+DOMAIN-SUFFIX,cloudfront-cn.net
+DOMAIN-SUFFIX,images-amazon.com
+DOMAIN-SUFFIX,ssl-images-amazon.com
+DOMAIN-SUFFIX,bstatic.com
+DOMAIN-SUFFIX,cloudsigma.com
+DOMAIN-SUFFIX,gandi.net
+DOMAIN-SUFFIX,alphassl.com
+DOMAIN-SUFFIX,startssl.com
+DOMAIN-SUFFIX,crisp.chat
+DOMAIN-SUFFIX,tawk.to
+DOMAIN-SUFFIX,tawk.link
+DOMAIN-SUFFIX,trellocdn.com
+DOMAIN-SUFFIX,nfoservers.com
+
+# 海外工具、消费品牌、游戏与教育平台
+DOMAIN-SUFFIX,browserleaks.com
+DOMAIN-SUFFIX,whatismyip.com
+DOMAIN-SUFFIX,weather.com
+DOMAIN-SUFFIX,abercrombie.com
+DOMAIN-SUFFIX,hollisterco.com
+DOMAIN-SUFFIX,ford.com
+DOMAIN-SUFFIX,garmin.com
+DOMAIN-SUFFIX,kaspersky-labs.com
+DOMAIN-SUFFIX,sony.com
+DOMAIN-SUFFIX,sonyentertainmentnetwork.com
+DOMAIN-SUFFIX,supercell.com
+DOMAIN-SUFFIX,clashroyaleapp.com
+DOMAIN-SUFFIX,snapdrop.net
+DOMAIN-SUFFIX,metatrader4.com
+DOMAIN-SUFFIX,metatrader5.com
+DOMAIN-SUFFIX,udacity.com
+DOMAIN-SUFFIX,openlearning.com
+
+# 海外学术出版、专业协会、大学与国际机构（按机构官方主域识别）
+DOMAIN-SUFFIX,acm.org
+DOMAIN-SUFFIX,acs.org
+DOMAIN-SUFFIX,aiaa.org
+DOMAIN-SUFFIX,aip.org
+DOMAIN-SUFFIX,ams.org
+DOMAIN-SUFFIX,annualreviews.org
+DOMAIN-SUFFIX,aps.org
+DOMAIN-SUFFIX,ascelibrary.org
+DOMAIN-SUFFIX,asm.org
+DOMAIN-SUFFIX,asme.org
+DOMAIN-SUFFIX,astm.org
+DOMAIN-SUFFIX,bmj.com
+DOMAIN-SUFFIX,cambridge.org
+DOMAIN-SUFFIX,cas.org
+DOMAIN-SUFFIX,clarivate.com
+DOMAIN-SUFFIX,ebscohost.com
+DOMAIN-SUFFIX,emerald.com
+DOMAIN-SUFFIX,engineeringvillage.com
+DOMAIN-SUFFIX,icevirtuallibrary.com
+DOMAIN-SUFFIX,ieee.org
+DOMAIN-SUFFIX,imf.org
+DOMAIN-SUFFIX,iop.org
+DOMAIN-SUFFIX,jamanetwork.com
+DOMAIN-SUFFIX,jhu.edu
+DOMAIN-SUFFIX,jstor.org
+DOMAIN-SUFFIX,karger.com
+DOMAIN-SUFFIX,libguides.com
+DOMAIN-SUFFIX,mpg.de
+DOMAIN-SUFFIX,myilibrary.com
+DOMAIN-SUFFIX,nature.com
+DOMAIN-SUFFIX,oecd-ilibrary.org
+DOMAIN-SUFFIX,osapublishing.org
+DOMAIN-SUFFIX,oup.com
+DOMAIN-SUFFIX,ovid.com
+DOMAIN-SUFFIX,oxfordartonline.com
+DOMAIN-SUFFIX,oxfordbibliographies.com
+DOMAIN-SUFFIX,oxfordmusiconline.com
+DOMAIN-SUFFIX,pnas.org
+DOMAIN-SUFFIX,proquest.com
+DOMAIN-SUFFIX,rsc.org
+DOMAIN-SUFFIX,sagepub.com
+DOMAIN-SUFFIX,sciencedirect.com
+DOMAIN-SUFFIX,scopus.com
+DOMAIN-SUFFIX,siam.org
+DOMAIN-SUFFIX,spiedigitallibrary.org
+DOMAIN-SUFFIX,springer.com
+DOMAIN-SUFFIX,springerlink.com
+DOMAIN-SUFFIX,tandfonline.com
+DOMAIN-SUFFIX,un.org
+DOMAIN-SUFFIX,uni-bielefeld.de
+DOMAIN-SUFFIX,webofknowledge.com
+DOMAIN-SUFFIX,westlaw.com
+DOMAIN-SUFFIX,wiley.com
+DOMAIN-SUFFIX,worldbank.org
+DOMAIN-SUFFIX,worldscientific.com
+
+# 已明确区分的国际产品入口，国内同类服务仍保留。
+# https://www.alibabacloud.com/help/en/account/aliyun-vs-alibaba-cloud
+DOMAIN-SUFFIX,alibabacloud.com
+DOMAIN-SUFFIX,alibabacloud.co.in
+DOMAIN-SUFFIX,alibabacloud.com.au
+DOMAIN-SUFFIX,alibabacloud.com.hk
+DOMAIN-SUFFIX,alibabacloud.com.my
+DOMAIN-SUFFIX,alibabacloud.com.sg
+DOMAIN-SUFFIX,alibabacloud.com.tw
+DOMAIN-SUFFIX,aliexpress.com
+DOMAIN-SUFFIX,aliexpress.ru
+DOMAIN-SUFFIX,lazada.com
+DOMAIN-SUFFIX,larksuite.com
+DOMAIN-SUFFIX,larksuitecdn.com
+DOMAIN-SUFFIX,bilibili.tv
+DOMAIN-SUFFIX,biliintl.com
+DOMAIN-SUFFIX,byteintl.net
+DOMAIN-SUFFIX,iq.com
+DOMAIN-SUFFIX,trip.com
+DOMAIN-SUFFIX,tripcdn.com
+
+# 华为云明确的境外区域；保留 cn-* 中国大陆区域。
+# https://support.huaweicloud.com/intl/en-us/api-cts/cts_api_0001.html
+DOMAIN-SUFFIX,af-south-1.myhuaweicloud.com
+DOMAIN-SUFFIX,ap-southeast-1.myhuaweicloud.com
+DOMAIN-SUFFIX,ap-southeast-2.myhuaweicloud.com
+DOMAIN-SUFFIX,ap-southeast-3.myhuaweicloud.com
+DOMAIN-SUFFIX,eu-west-0.myhuaweicloud.com
+DOMAIN-SUFFIX,la-north-2.myhuaweicloud.com
+DOMAIN-SUFFIX,la-south-2.myhuaweicloud.com
+DOMAIN-SUFFIX,na-mexico-1.myhuaweicloud.com
+DOMAIN-SUFFIX,ru-northwest-2.myhuaweicloud.com
+DOMAIN-SUFFIX,sa-brazil-1.myhuaweicloud.com
+
+# 上游把泰国二级公共后缀当作域名，范围过大。
+DOMAIN-SUFFIX,in.th
